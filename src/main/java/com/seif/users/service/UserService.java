@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.seif.users.entities.Role;
 import com.seif.users.entities.User;
+import com.seif.users.service.register.RegistrationRequest;
 
 public interface UserService {
 	User saveUser(User user);
@@ -11,4 +12,9 @@ public interface UserService {
 	Role addRole(Role role);
 	User addRoleToUser(String username, String rolename);
 	List<User> findAllUsers();
+	
+	User registerUser(RegistrationRequest request);
+	public void sendEmailUser(User u, String code);
+	public User validateToken(String code);
+
 }

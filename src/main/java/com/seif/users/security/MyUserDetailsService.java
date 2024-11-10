@@ -36,7 +36,9 @@ public class MyUserDetailsService implements UserDetailsService {
 			auths.add(authority);
 		});
 		
-		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), auths);
+		return new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(),user.getEnabled(),true,true
+				,true,auths);
+
 	}
 
 }
